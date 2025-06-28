@@ -1,9 +1,19 @@
+e Node.js base image
+FROM node:18-alpine
 
-FROM Dockerfile
+# Set working directory
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy app source code
 COPY . .
 
-WORKDIR /tmp
+# Expose port your app runs on
+EXPOSE 3000
 
-VOLUME ["MYVOLUME"]
+# Start the app
+CMD ["npm", "start"]
 
-MAINTAINER "saurabh yadav"
