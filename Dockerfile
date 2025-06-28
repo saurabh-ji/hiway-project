@@ -1,14 +1,7 @@
-
-FROM node:18-alpine
-
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+EXPOSE 80
 WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+MAINTAINER "saurabh yadav"
+VOLUME ["/myvolume"]
 
