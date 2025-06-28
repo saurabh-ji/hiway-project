@@ -1,5 +1,5 @@
-FROM FROM nginx
-COPY static-html-directory /usr/share/nginx/html
+FROM FROM apache2
+COPY static-html-directory /usr/share/apache2/html
 
 WORKDIR /tmp
 COPY . .
