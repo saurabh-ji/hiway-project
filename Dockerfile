@@ -1,5 +1,9 @@
-FROM FROM apache2
-WORKDIR /tmp
+
+FROM Dockerfile
 COPY . .
-VOLUME ["/MYVOLUME"]
+
+WORKDIR /tmp
+
+VOLUME ["MYVOLUME"]
+
 MAINTAINER "saurabh yadav"
